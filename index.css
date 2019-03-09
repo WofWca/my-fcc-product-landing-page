@@ -52,6 +52,19 @@ nav ul {
   align-items: center;
 }
 
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: 1s cubic-bezier(0, 1, 1, 1); /* Hover off */
+}
+.nav-link:hover {
+  background-color: plum;
+  transition: 0s; /* Hover on */
+}
+
 nav ul li {
-  margin: 10px;
+  height: 100%;
 }
