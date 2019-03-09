@@ -1,6 +1,9 @@
 body {
   margin: 0;
   font-family: Impact, Charcoal, sans-serif;
+  --primary-color: #1e2a38;
+  --primary-variant-color: #151E28;
+  --secondary-color: #ff9bcd;
 }
 
 header {
@@ -19,7 +22,7 @@ a {
 header .logo-container {
   display: flex;
   align-items: center;
-  background-color: black;
+  background-color: var(--primary-variant-color);
   color: white;
   text-transform: lowercase;
   padding: 5px;
@@ -61,7 +64,7 @@ nav ul {
   transition: 1s cubic-bezier(0, 1, 1, 1); /* Hover off */
 }
 .nav-link:hover {
-  background-color: plum;
+  background-color: var(--secondary-color);
   transition: 0s; /* Hover on */
 }
 
