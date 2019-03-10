@@ -1,9 +1,19 @@
 body {
   margin: 0;
-  font-family: Impact, Charcoal, sans-serif;
+  --font-family: Impact, Charcoal, sans-serif;
+  font-family: var(--font-family);
   --primary-color: #1e2a38;
   --primary-variant-color: #151E28;
   --secondary-color: #ff9bcd;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: lighter;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 header {
@@ -14,9 +24,27 @@ header {
   white-space: nowrap;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+@media screen and (max-width: 600px) {
+  header {
+    height: unset;
+    flex-direction: column;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  nav ul li {
+    width: 100%;
+  }
+  .nav-link {
+    justify-content: center;
+  }
+  header .logo-container {
+    height: var(--header-height);
+  }
+}
+
+main {
+  background-color: #eee;
 }
 
 header .logo-container {
@@ -26,12 +54,12 @@ header .logo-container {
   color: white;
   text-transform: lowercase;
   padding: 5px;
+  box-sizing: border-box;
 }
 
 header h1 {
   font-size: larger;
   margin: 15px;
-  font-weight: lighter;
 }
 
 header .logo-img-container {
@@ -70,4 +98,73 @@ nav ul {
 
 nav ul li {
   height: 100%;
+}
+
+section {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#discount-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+#discount-section > * {
+  margin: 15px;
+}
+
+#discount-section #email {
+  border: 0;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+#discount-section [type="submit"] {
+  width: 80px;
+  height: 30px;
+  font-size: medium;
+  border: 0;
+  background-color: var(--secondary-color);
+}
+
+#features-section {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  #features-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #features-section {
+    flex-direction: column;
+  }
+}
+
+#features-section > .card {
+  font-family: sans-serif;
+  text-align: center;
+  flex-basis: 33%;
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #999;
+  /* border: 1px solid #aaa; */
+}
+
+#features-section > * img {
+  height: 150px;
+  max-width: 150px;
 }
