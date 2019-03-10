@@ -17,6 +17,9 @@ a {
 }
 
 header {
+  position: sticky;
+  top: 0;
+  background-color: white;
   --header-height: 50px;
   height: var(--header-height);
   display: flex;
@@ -56,19 +59,16 @@ header .logo-container {
   padding: 5px;
   box-sizing: border-box;
 }
-
 header h1 {
   font-size: larger;
   margin: 15px;
 }
-
 header .logo-img-container {
   height: calc(var(--header-height) - 10px);
   width: calc(var(--header-height) - 10px);
   display: flex;
   justify-content: center;
 }
-
 header #header-img {
   height: 100%;
   width: auto;
@@ -82,7 +82,6 @@ nav ul {
   display: flex;
   align-items: center;
 }
-
 .nav-link {
   display: flex;
   align-items: center;
@@ -95,35 +94,31 @@ nav ul {
   background-color: var(--secondary-color);
   transition: 0s; /* Hover on */
 }
-
 nav ul li {
   height: 100%;
 }
-
 section {
+  display: flex;
+  justify-content: center;
   padding-left: 50px;
   padding-right: 50px;
 }
 
-#discount-section {
+#discount {
   display: flex;
-  justify-content: center;
   align-items: center;
   background-color: var(--primary-color);
   color: white;
 }
-
-#discount-section > * {
+#discount > * {
   margin: 15px;
 }
-
-#discount-section #email {
+#discount #email {
   border: 0;
   height: 30px;
   box-sizing: border-box;
 }
-
-#discount-section [type="submit"] {
+#discount [type="submit"] {
   width: 80px;
   height: 30px;
   font-size: medium;
@@ -131,40 +126,47 @@ section {
   background-color: var(--secondary-color);
 }
 
-#features-section {
-  display: flex;
+#features {
   justify-content: space-around;
   flex-direction: row;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
-
 @media screen and (max-width: 768px) {
-  #features-section {
+  #features {
     padding-left: 0;
     padding-right: 0;
   }
 }
-
 @media screen and (max-width: 600px) {
-  #features-section {
+  #features {
     flex-direction: column;
   }
 }
 
-#features-section > .card {
+.card {
+  display: flex;
+  flex-basis: 450px;
+  flex-direction: column;
   font-family: sans-serif;
   text-align: center;
-  flex-basis: 33%;
+  align-items: center;
   margin: 10px;
   padding: 10px;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0px 0px 10px #999;
-  /* border: 1px solid #aaa; */
+}
+.card p {
+  margin-top: 0;
 }
 
-#features-section > * img {
+#features .card {
+  flex-basis: 33%;
+}
+#features > * img {
   height: 150px;
   max-width: 150px;
+}
+
+#how-they-do-it #video {
+  border-radius: 5px;
 }
