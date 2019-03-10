@@ -25,25 +25,7 @@ header {
   display: flex;
   text-transform: uppercase;
   white-space: nowrap;
-}
-
-@media screen and (max-width: 600px) {
-  header {
-    height: unset;
-    flex-direction: column;
-  }
-  nav ul {
-    flex-direction: column;
-  }
-  nav ul li {
-    width: 100%;
-  }
-  .nav-link {
-    justify-content: center;
-  }
-  header .logo-container {
-    height: var(--header-height);
-  }
+  border-bottom: 1px solid var(--primary-color);
 }
 
 main {
@@ -130,17 +112,6 @@ section {
   justify-content: space-around;
   flex-direction: row;
 }
-@media screen and (max-width: 768px) {
-  #features {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-@media screen and (max-width: 600px) {
-  #features {
-    flex-direction: column;
-  }
-}
 
 .card {
   display: flex;
@@ -167,6 +138,38 @@ section {
   max-width: 150px;
 }
 
+#how-they-do-it .card {
+  flex-basis: unset;
+}
 #how-they-do-it #video {
   border-radius: 5px;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  #features {
+    flex-direction: column;
+  }
+  header {
+    height: unset;
+    flex-direction: column;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  nav ul li {
+    width: 100%;
+  }
+  .nav-link {
+    justify-content: center;
+  }
+  header .logo-container {
+    height: var(--header-height);
+  }
 }
